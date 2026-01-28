@@ -17,8 +17,8 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/Cxa6htaki78?si=ZZkZB38D6cHtpsHd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 
-    <div style="margin-bottom: 50px;">
-        <p>Above is the first 20 mins of gameplay when starting a new account</p>
+    <div>
+        <p>Take a look at the first 20 mins of gameplay when starting a new account!</p>
     </div>
 
     <div class="slideshow-container">
@@ -42,8 +42,8 @@
             <img src="Images/CardScramble_5.png" style="width:100%">
         </div>
         
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <a class="prev" onclick="showPrevSlide()">&#10094;</a>
+        <a class="next" onclick="showNextSlide()">&#10095;</a>
     </div>
 
     <h3 style="color: cyan;">Contributions:</h3>
@@ -66,14 +66,20 @@
     let timeoutId;
     showSlides();
 
-    function plusSlides(n) {
+    function showNextSlide() {
         clearTimeout(timeoutId);
-        showSlides(slideIndex += n);
+        showSlide(slideIndex + 1);
     }
 
-    function showSlides() {
+    function showPrevSlide() {
+        clearTimeout(timeoutId);
+        showSlide(slideIndex - 1);
+    }
+
+    function showSlide(index) {
         let i;
         let slides = document.getElementsByClassName("slide");
+        slideIndex = index;
     
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";  
@@ -83,9 +89,7 @@
         if (slideIndex < 0) {slideIndex = slides.length - 1}
 
         slides[slideIndex].style.display = "block";  
-    
-        slideIndex++;
-        timeoutId = setTimeout(showSlides, 5000); 
+        timeoutId = setTimeout(showNextSlide, 5000); 
     }
     </script>
 </body>

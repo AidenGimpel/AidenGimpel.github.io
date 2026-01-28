@@ -26,8 +26,8 @@
     </p>
     <p>- Contributed to the design of many of the gameplay mechanics to improve the player experience.</p>
     <h3 style="color: blue;">Play it on Pogo or Crazy Games:</h3>
-    <p style="color: red;"><a href="https://www.pogo.com/games/card-scramble">Pogo Link</a></p>
-    <p style="color: red;"><a href="https://www.crazygames.com/game/card-scramble-viola-s-diner">CrazyGames Link</a></p>
+    <p><a style="color: red;" href="https://www.pogo.com/games/card-scramble">Pogo Link</a></p>
+    <p><a  style="color: red;"href="https://www.crazygames.com/game/card-scramble-viola-s-diner">CrazyGames Link</a></p>
 
     <div class="slideshow-container">
         <div class="slide fade">
@@ -73,12 +73,12 @@
             slides[i].style.display = "none";  
         }
     
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}    
-        if (slideIndex < 1) {slideIndex = slides.length}
+        if (slideIndex >= slides.length) {slideIndex = 0}    
+        if (slideIndex < 0) {slideIndex = slides.length - 1}
 
-        slides[slideIndex-1].style.display = "block";  
+        slides[slideIndex].style.display = "block";  
     
+        slideIndex++;
         timeoutId = setTimeout(showSlides, 5000); 
     }
     </script>

@@ -7,8 +7,69 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<h2 style="color: blue;">About Me</h2>
-<p>Motivated and passionate game programmer with over 3 years of professional industry experience andover 9 years of personal game development practice. With my skills, education, and experience, I have successfully shipped 3 commercial titles and contributed to many more. Take a look at some of my projects below!</p>
-<div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Cxa6htaki78?si=ZZkZB38D6cHtpsHd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+<body>
+    <h2 style="color: blue;">About Me</h2>
+    <p>Motivated and passionate game programmer with over 3 years of professional industry experience andover 9 years of personal game development practice. With my skills, education, and experience, I have successfully shipped 3 commercial titles and contributed to many more. Take a look at some of my projects below!</p>
+    <h2 style="color: blue;">Card Scramble: Viola's Diner</h2>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Cxa6htaki78?si=ZZkZB38D6cHtpsHd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <h3 style="color: blue;">Contributions:</h3>
+    <p>- Implemented many of the games main gameplay features such as powerups, boosters, board modifiers, card tap/drag controls, and the entire dialogue system, including importing, parsing, and display.
+    </p>
+    <p>- Helped ensure proper communication between the client and server to track analytics as well as Daily Puzzle tracking and progression.
+    </p>
+    <p>- Implemented most of the UI in the menus and the gameplay HUD.&nbsp;
+    </p>
+    <p>- Created UX and game feel&nbsp;features such as the card tilt when it is being dragged and the card draw animation.
+    </p>
+    <p>- Contributed to the design of many of the gameplay mechanics to improve the player experience.</p>
+    <h3 style="color: blue;">Play it on Pogo or Crazy Games:</h3>
+    <p style="color: red;"><a href="https://www.pogo.com/games/card-scramble">Pogo Link</a></p>
+    <p style="color: red;"><a href="https://www.crazygames.com/game/card-scramble-viola-s-diner">CrazyGames Link</a></p>
+
+    <div class="slideshow-container">
+        <div class="slide fade">
+           <img src="images/game-shot1.jpg" style="width:100%">
+        <div class="caption">Level 1: The Forest</div>
+        
+        <div class="slide fade">
+            <img src="images/game-shot2.jpg" style="width:100%">
+            <div class="caption">Level 2: The Dungeon</div>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+
+    <script>
+    let slideIndex = 0;
+    let timeoutId;
+    showSlides();
+
+    function plusSlides(n) {
+        clearTimeout(timeoutId);
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+    
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+    
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        if (slideIndex < 1) {slideIndex = slides.length}
+
+        slides[slideIndex-1].style.display = "block";  
+    
+        timeoutId = setTimeout(showSlides, 5000); 
+    }
+    </script>
+</body>
+</html>

@@ -10,41 +10,29 @@
 <body>
     <h2 style="color: cyan;">Card Scramble: Viola's Diner</h2>
     <p>
-        Card Scramble: Viola's Diner is a web based cozy card/strategy game reaching thousands of active players. It takes a combination of Scrabble and Poker gameplay, and mixes it with unique diner customization and a refreshing story.
+        Card Scramble: Viola's Diner is a web based cozy card/strategy game reaching thousands of active players. It takes a combination of Scrabble and Poker gameplay, and mixes it with unique diner customization and a refreshing story. The team for this game was a small team consisting of 3 total engineers, 2 designers, and 6 artists. My role as one of the 3 engineers was focused on the cardplay aspect of the gameplay as well as the dialogue system. More details about my specific contributions can be found below.
     </p>
 
-    <div class="video-container">
+    <div>
+        <p style="margin-top: 25px;">Take a look at the first 20 mins of gameplay when starting a new account!</p>
+    </div>
+
+    <div class="video-container" style="margin-bottom: 5px;">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/Cxa6htaki78?si=ZZkZB38D6cHtpsHd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 
-    <div>
-        <p>Take a look at the first 20 mins of gameplay when starting a new account!</p>
-    </div>
-
     <div class="slideshow-container">
-        <div class="slide fade">
-           <img src="Images/CardScramble_1.png" style="width:100%">
-        </div>
-        
-        <div class="slide fade">
-            <img src="Images/CardScramble_2.png" style="width:100%">
-        </div>
-
-        <div class="slide fade">
-            <img src="Images/CardScramble_3.png" style="width:100%">
-        </div>
-
-        <div class="slide fade">
-            <img src="Images/CardScramble_4.png" style="width:100%">
-        </div>
-
-        <div class="slide fade">
-            <img src="Images/CardScramble_5.png" style="width:100%">
-        </div>
-        
-        <a class="prev" onclick="showPrevSlide()">&#10094;</a>
-        <a class="next" onclick="showNextSlide()">&#10095;</a>
+    <div class="slides-wrapper" id="slideWrapper">
+        <div class="slide"><img src="Images/CardScramble_1.png"></div>
+        <div class="slide"><img src="Images/CardScramble_2.png"></div>
+        <div class="slide"><img src="Images/CardScramble_3.png"></div>
+        <div class="slide"><img src="Images/CardScramble_4.png"></div>
+        <div class="slide"><img src="Images/CardScramble_5.png"></div>
     </div>
+
+    <a class="prev" onclick="showPrevSlide()">&#10094;</a>
+    <a class="next" onclick="showNextSlide()">&#10095;</a>
+</div>
 
     <h3 style="color: cyan;">Contributions:</h3>
     <p>- Implemented many of the games main gameplay features such as powerups, boosters, board modifiers, card tap/drag controls, and the entire dialogue system, including importing, parsing, and display.
@@ -55,40 +43,44 @@
     </p>
     <p>- Created UX and game feel features such as the card tilt when it is being dragged and the card draw animation.
     </p>
-    <p>- Contributed to the design of many of the gameplay mechanics to improve the player experience.</p>
-    <h3 style="color: cyan;">Play now on <a href="https://www.pogo.com/games/card-scramble">Pogo</a> or <a href="https://www.crazygames.com/game/card-scramble-viola-s-diner">CrazyGames</a>!</h3>
+    <p>- Contributed to the design of many of the gameplay mechanics to improve the player experience.
+    </p>
+    <p>- Constant communication and collaboration with artists and designers to help implement their vision into the game.
+    </p>
+    <h3 style="color: cyan;">Play now on <a style="color: cyan;" href="https://www.pogo.com/games/card-scramble">Pogo</a> or <a style="color: cyan;" href="https://www.crazygames.com/game/card-scramble-viola-s-diner">CrazyGames</a>!</h3>
 
 
     <script>
-    let slideIndex = 0;
-    let timeoutId;
-    showSlide(0);
 
-    function showNextSlide() {
-        clearTimeout(timeoutId);
-        showSlide(slideIndex + 1);
-    }
+        let slideIndex = 0;
+        let timeoutId;
 
-    function showPrevSlide() {
-        clearTimeout(timeoutId);
-        showSlide(slideIndex - 1);
-    }
-
-    function showSlide(index) {
-        let i;
-        let slides = document.getElementsByClassName("slide");
-        slideIndex = index;
-    
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
+        function showNextSlide() {
+            clearTimeout(timeoutId);
+            showSlide(slideIndex + 1);
         }
-    
-        if (slideIndex >= slides.length) {slideIndex = 0}    
-        if (slideIndex < 0) {slideIndex = slides.length - 1}
 
-        slides[slideIndex].style.display = "block";  
-        timeoutId = setTimeout(showNextSlide, 5000); 
-    }
+        function showPrevSlide() {
+            clearTimeout(timeoutId);
+            showSlide(slideIndex - 1);
+        }
+
+        function showSlide(index) {
+            const wrapper = document.getElementById("slideWrapper");
+            const slides = document.getElementsByClassName("slide");
+            slideIndex = index;
+
+            if (slideIndex >= slides.length) {slideIndex = 0}    
+            if (slideIndex < 0) {slideIndex = slides.length - 1}
+
+            const offset = -slideIndex * 100;
+            wrapper.style.transform = `translateX(${offset}%)`;
+
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                showNextSlide();
+            }, 4000);
+        }
     </script>
 </body>
 </html>

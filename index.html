@@ -4,82 +4,394 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aiden Gimpel | Game Programmer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h2 style="color: cyan;">Card Scramble: Viola's Diner</h2>
-    <p>
-        Card Scramble: Viola's Diner is a web based cozy card/strategy game reaching thousands of active players. It takes a combination of Scrabble and Poker gameplay, and mixes it with unique diner customization and a refreshing story. The team for this game was a small team consisting of 3 total engineers, 2 designers, and 6 artists. My role as one of the 3 engineers was focused on the cardplay aspect of the gameplay as well as the dialogue system. More details about my specific contributions can be found below.
-    </p>
+    <!-- <div class="project-container">
+        <h2 style="color: cyan;">Card Scramble: Viola's Diner</h2>
+        <p>
+           Card Scramble: Viola's Diner is a web based cozy card/strategy game reaching thousands of active players. It takes a combination of Scrabble and Poker gameplay, and mixes it with unique diner customization and a refreshing story. The team for this game was a small team consisting of 3 total engineers, 2 designers, and 6 artists. My role as one of the 3 engineers was focused on the cardplay aspect of the gameplay as well as the dialogue system. More details about my specific contributions can be found below.
+        </p>
 
-    <div>
-        <p style="margin-top: 25px;">Take a look at the first 20 mins of gameplay when starting a new account!</p>
+        <div>
+            <p style="margin-top: 25px;">Take a look at the first 20 mins of gameplay when starting a new account!</p>
+        </div>
+
+        <div class="video-container" style="margin-bottom: 5px;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Cxa6htaki78?si=ZZkZB38D6cHtpsHd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="slideshow-container">
+            <div class="slides-wrapper">
+                <div class="slide"><img src="Images/CardScramble_1.png"></div>
+                <div class="slide"><img src="Images/CardScramble_2.png"></div>
+                <div class="slide"><img src="Images/CardScramble_3.png"></div>
+                <div class="slide"><img src="Images/CardScramble_4.png"></div>
+                <div class="slide"><img src="Images/CardScramble_5.png"></div>
+            </div>
+
+            <a class="prev" onclick="moveSlides(this, -1)">&#10094;</a>
+            <a class="next" onclick="moveSlides(this, 1)">&#10095;</a>
+        </div>
+
+        <h3 style="color: orange;">Contributions:</h3>
+        <p>Implemented many of the games main gameplay features such as powerups, boosters, board modifiers, card tap/drag controls, and the entire dialogue system, including importing, parsing, and display.
+        </p>
+        <p>Helped ensure proper communication between the client and server to track analytics as well as Daily Puzzle tracking and progression.
+        </p>
+        <p>Implemented most of the UI in the menus and the gameplay HUD.
+        </p>
+        <p>Created UX and game feel features such as the card tilt when it is being dragged and the card draw animation.
+        </p>
+        <p>Contributed to the design of many of the gameplay mechanics to improve the player experience.
+        </p>
+        <p>Constant communication and collaboration with artists and designers to help implement their vision into the game.
+        </p>
+        <h3 style="color: orange;">Play now on <a style="color: orange;" href="https://www.pogo.com/games/card-scramble">Pogo</a> or <a style="color: orange;" href="https://www.crazygames.com/game/card-scramble-viola-s-diner">CrazyGames</a>!</h3>
+    </div> -->
+
+    <!-- <div class="project-container">
+        <h2 style="color: cyan;">Poker Scramble</h2>
+
+        <p>
+           Poker Scramble is a mobile card/strategy game that you can find in early access on the Google Play Store. Complete daily puzzle challenges or wager your chips against other players to win big and unlock exclusive cosmetics.
+        </p>
+
+        <div class="slideshow-container">
+            <div class="slides-wrapper">
+                <div class="slide"><img src="Images/PokerScramble_1.png"></div>
+                <div class="slide"><img src="Images/PokerScramble_2.png"></div>
+                <div class="slide"><img src="Images/PokerScramble_3.png"></div>
+                <div class="slide"><img src="Images/PokerScramble_4.png"></div>
+                <div class="slide"><img src="Images/PokerScramble_5.png"></div>
+            </div>
+
+            <a class="prev" onclick="moveSlides(this, -1)">&#10094;</a>
+            <a class="next" onclick="moveSlides(this, 1)">&#10095;</a>
+        </div>
+
+        <h3 style="color: orange;">Contributions:</h3>
+        <p>Implemented gameplay systems such as level progression and the different game modes that are present in the game (Daily Puzzle, PVP, Story).
+        </p>
+        <p>Implemented core UI systems and UX improvements such as the animated in game menus and the HUD.
+        </p>
+        <p>Constant communication and collaboration with artists and designers to help implement their vision into the game.
+        </p>
+        <p>Active teamwork with other engineers to minimize tech debt and improve work efficiency.
+        </p>
+        <h3 style="color: orange;">Download and play now on the <a style="color: orange;" href="https://play.google.com/store/apps/details?id=com.ironfoxgames.scramble">Google Play Store</a>!</h3>
+    </div> -->
+
+    <!-- <script>
+
+        function moveSlides(button, direction) {
+            const container = button.parentElement;
+            const wrapper = container.querySelector('.slides-wrapper');
+            const slides = wrapper.querySelectorAll('.slide');
+
+            let currentIndex = parseInt(container.getAttribute('data-index')) || 0;
+
+            currentIndex += direction;
+
+            if (currentIndex >= slides.length)
+            {
+                currentIndex = 0;
+            }
+            if (currentIndex < 0)
+            {
+                currentIndex = slides.length - 1;
+            }
+
+            wrapper.style.transform = `translateX(${-currentIndex * 100}%)`;
+            container.setAttribute('data-index', currentIndex);
+        }
+    </script> -->
+    <div class="deck-wrapper">
+        
+        <button class="deck-btn" onclick="cycleDeck(-1)">&#10094;</button>
+
+        <div class="card-stack" id="cardStack">
+
+            <div class="card" onclick="flipCard(this, event)">
+                <div class="card-inner">
+                    
+                    <div class="card-front">
+                        <h2 style="color: orange; margin-top: 0;">Card Scramble: Viola's Diner</h2>
+                        <p>
+                           Card Scramble: Viola's Diner is a web based cozy card/strategy game reaching thousands of active players. It takes a combination of Scrabble and Poker gameplay and mixes it with unique diner customization.
+                        </p>
+                        <p>Take a look at the first 20 mins of gameplay below!</p>
+
+                        <div class="video-container" style="margin-bottom: 10px;">
+                            <iframe src="https://www.youtube.com/embed/Cxa6htaki78?si=ZZkZB38D6cHtpsHd" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="slideshow-container" data-index="0">
+                            <div class="slides-wrapper">
+                                <div class="slide"><img src="Images/CardScramble_1.png"></div>
+                                <div class="slide"><img src="Images/CardScramble_2.png"></div>
+                                <div class="slide"><img src="Images/CardScramble_3.png"></div>
+                                <div class="slide"><img src="Images/CardScramble_4.png"></div>
+                                <div class="slide"><img src="Images/CardScramble_5.png"></div>
+                            </div>
+                            <a class="prev" onclick="moveSlides(this, -1); event.stopPropagation();">&#10094;</a>
+                            <a class="next" onclick="moveSlides(this, 1); event.stopPropagation();">&#10095;</a>
+                        </div>
+                        
+                        <p class="flip-hint" style="text-align: center; color: cyan; font-size: 0.9rem; margin-top: 15px;">
+                            <strong>
+                                (Click On Card To Flip For More Information)
+                            </strong>
+                        </p>
+                    </div>
+
+                    <div class="card-back">
+                        <h2 style="color: orange; border-bottom: 1px solid #333; padding-bottom: 15px;">My Contributions</h2>
+                        
+                        <p><strong style="color: orange;">Gameplay:</strong> Implemented powerups, boosters, board modifiers, card tap/drag controls and many other gameplay related systems.</p>
+                        <p><strong style="color: orange;">Systems:</strong> Built the entire dialogue system (importing, parsing, display) and established client-server communication for analytics/puzzles.</p>
+                        <p><strong style="color: orange;">UI/UX:</strong> Implemented and helped design the HUD, in game menus, and juice features such as the card tilt animation and the card drawing animation.</p>
+                        <p><strong style="color: orange;">Design:</strong> Collaborated with artists and designers to implement their vision into the game.</p>
+                        
+                        <div style="margin-top: 30px; text-align: center;">
+                            <h3 style="color: orange;">Play Now:</h3>
+                            <a style="color: cyan; font-size: 1.2rem; margin: 0 10px;" href="https://www.pogo.com/games/card-scramble" target="_blank" onclick="event.stopPropagation()">Pogo</a>
+                            |
+                            <a style="color: cyan; font-size: 1.2rem; margin: 0 10px;" href="https://www.crazygames.com/game/card-scramble-viola-s-diner" target="_blank" onclick="event.stopPropagation()">CrazyGames</a>
+                        </div>
+
+                        <p class="flip-hint" style="text-align: center; color: cyan; font-size: 0.9rem; margin-top: 15px;">
+                            <strong>
+                                (Click On Card To Flip To The Front)
+                            </strong>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card" onclick="flipCard(this, event)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2 style="color: orange; margin-top: 0;">Chibi Champions</h2>
+                        <p>
+                            Chibi Champions is a chaotic third person tower-defense/brawler game, which allows you to play as three adorable mutated animals against an onslaught of enemies. Fight to defend the cure for your mutation alongside your newfound friends. Build powerful towers and gather coins to unlock their true potential.
+                        </p>
+
+                        <p>
+                            This game won my team and I the Game of the Year award at Ontario Tech University's Games Con in April 2022.
+                        </p>
+                        <div class="slideshow-container" data-index="0" style="background: #221500;">
+                             <div class="slides-wrapper">
+                                <div class="slide"><img src="Images/ChibiChampions_5.png"></div>
+                                <div class="slide"><img src="Images/ChibiChampions_1.png"></div>
+                                <div class="slide"><img src="Images/ChibiChampions_2.png"></div>
+                                <div class="slide"><img src="Images/ChibiChampions_3.png"></div>
+                                <div class="slide"><img src="Images/ChibiChampions_4.png"></div>
+                            </div>
+                            <a class="prev" onclick="moveSlides(this, -1); event.stopPropagation();">&#10094;</a>
+                            <a class="next" onclick="moveSlides(this, 1); event.stopPropagation();">&#10095;</a>
+                        </div>
+
+                         <p class="flip-hint" style="text-align: center; color: cyan; font-size: 0.9rem; margin-top: 15px;">
+                            <strong>
+                                (Click On Card To Flip For More Information)
+                            </strong>
+                        </p>
+                    </div>
+                    <div class="card-back">
+                        <h2 style="color: orange; border-bottom: 1px solid #333; padding-bottom: 15px;">My Contributions</h2>
+                        <p>
+                            I was the sole engineer on this project and I implemented and designed all aspects of gameplay. This includes every gameplay mechanic for characters, enemies, towers, AI, and the core gameplay loop and meta loop. There were 4 other members on my team for this project. 2 Artists, 1 sound engineer, and one project manager/UI designer.
+                        </p>
+
+                        <div style="margin-top: 30px; text-align: center;">
+                            <h3 style="color: orange;">Download and Play Now:</h3>
+                            <a style="color: cyan;" href="https://tforty.itch.io/chibi-champions">Itch.io</a>
+                        </div>
+
+                         <p class="flip-hint" style="text-align: center; color: cyan; font-size: 0.9rem; margin-top: 15px;">
+                            <strong>
+                                (Click On Card To Flip To The Front)
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="flipCard(this, event)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2 style="color: orange; margin-top: 0;">Poker Scramble</h2>
+                        <p>
+                            Poker Scramble is a mobile card/strategy game that you can find in early access on the Google Play Store. Complete daily puzzle challenges or wager your chips against other players to win big and unlock exclusive cosmetics.
+                        </p>
+                        <div class="slideshow-container-mobile" data-index="0" style="background: #221500;">
+                             <div class="slides-wrapper">
+                                <div class="slide"><img src="Images/PokerScramble_1.png"></div>
+                                <div class="slide"><img src="Images/PokerScramble_2.png"></div>
+                                <div class="slide"><img src="Images/PokerScramble_3.png"></div>
+                                <div class="slide"><img src="Images/PokerScramble_4.png"></div>
+                                <div class="slide"><img src="Images/PokerScramble_5.png"></div>
+                            </div>
+                            <a class="prev" onclick="moveSlides(this, -1); event.stopPropagation();">&#10094;</a>
+                            <a class="next" onclick="moveSlides(this, 1); event.stopPropagation();">&#10095;</a>
+                        </div>
+
+                        <p class="flip-hint" style="text-align: center; color: cyan; font-size: 0.9rem; margin-top: 15px;">
+                            <strong>
+                                (Click On Card To Flip For More Information)
+                            </strong>
+                        </p>
+                    </div>
+                    <div class="card-back">
+                        <h2 style="color: orange; border-bottom: 1px solid #333; padding-bottom: 15px;">My Contributions</h2>
+                        <p>
+                            Implemented gameplay systems such as level progression and the different game modes that are present in the game (Daily Puzzle, PVP, Story).
+                        </p>
+                        <p>
+                            Implemented core UI systems and UX improvements such as the animated in game menus and the HUD.
+                        </p>
+                        <p>
+                            Constant communication and collaboration with artists and designers to help implement their vision into the game.
+                        </p>
+                        <p>
+                            Active teamwork with other engineers to minimize tech debt and improve work efficiency.
+                        </p>
+
+                        <div style="margin-top: 30px; text-align: center;">
+                            <h3 style="color: orange;">Download and Play Now:</h3>
+                            <a style="color: cyan;" href="https://play.google.com/store/apps/details?id=com.ironfoxgames.scramble">Google Play Store</a>
+                        </div>
+
+                        <p class="flip-hint" style="text-align: center; color: cyan; font-size: 0.9rem; margin-top: 15px;">
+                            <strong>
+                                (Click On Card To Flip To The Front)
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+             <!-- <div class="card" onclick="flipCard(this, event)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2 style="color: #ff5555; margin-top: 0;">Project 2: Space Shooter</h2>
+                        <p>This is a placeholder to show how the deck stacks.</p>
+                        <div class="slideshow-container" data-index="0" style="background: #221500;">
+                             <div class="slides-wrapper">
+                                <div class="slide" style="color:white; align-items:center;">Screenshot A</div>
+                                <div class="slide" style="color:white; align-items:center;">Screenshot B</div>
+                            </div>
+                            <a class="prev" onclick="moveSlides(this, -1); event.stopPropagation();">&#10094;</a>
+                            <a class="next" onclick="moveSlides(this, 1); event.stopPropagation();">&#10095;</a>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h2 style="color: orange;">Contributions</h2>
+                        <p>Physics engine, AI pathfinding, etc.</p>
+                    </div>
+                </div>
+            </div> -->
+
+        </div> <button class="deck-btn" onclick="cycleDeck(1)">&#10095;</button>
+
     </div>
-
-    <div class="video-container" style="margin-bottom: 5px;">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Cxa6htaki78?si=ZZkZB38D6cHtpsHd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-
-    <div class="slideshow-container">
-    <div class="slides-wrapper" id="slideWrapper">
-        <div class="slide"><img src="Images/CardScramble_1.png"></div>
-        <div class="slide"><img src="Images/CardScramble_2.png"></div>
-        <div class="slide"><img src="Images/CardScramble_3.png"></div>
-        <div class="slide"><img src="Images/CardScramble_4.png"></div>
-        <div class="slide"><img src="Images/CardScramble_5.png"></div>
-    </div>
-
-    <a class="prev" onclick="showPrevSlide()">&#10094;</a>
-    <a class="next" onclick="showNextSlide()">&#10095;</a>
-</div>
-
-    <h3 style="color: cyan;">Contributions:</h3>
-    <p>- Implemented many of the games main gameplay features such as powerups, boosters, board modifiers, card tap/drag controls, and the entire dialogue system, including importing, parsing, and display.
-    </p>
-    <p>- Helped ensure proper communication between the client and server to track analytics as well as Daily Puzzle tracking and progression.
-    </p>
-    <p>- Implemented most of the UI in the menus and the gameplay HUD.
-    </p>
-    <p>- Created UX and game feel features such as the card tilt when it is being dragged and the card draw animation.
-    </p>
-    <p>- Contributed to the design of many of the gameplay mechanics to improve the player experience.
-    </p>
-    <p>- Constant communication and collaboration with artists and designers to help implement their vision into the game.
-    </p>
-    <h3 style="color: cyan;">Play now on <a style="color: cyan;" href="https://www.pogo.com/games/card-scramble">Pogo</a> or <a style="color: cyan;" href="https://www.crazygames.com/game/card-scramble-viola-s-diner">CrazyGames</a>!</h3>
-
 
     <script>
+        /* --- DECK SHUFFLING LOGIC --- */
+        const stackContainer = document.getElementById('cardStack');
+        // Get all cards as an Array
+        let cards = Array.from(document.querySelectorAll('.card'));
 
-        let slideIndex = 0;
-        let timeoutId;
-
-        function showNextSlide() {
-            clearTimeout(timeoutId);
-            showSlide(slideIndex + 1);
+        function updateStackVisuals() {
+            cards.forEach((card, index) => {
+                // Determine z-index (Top card is highest)
+                card.style.zIndex = cards.length - index;
+                
+                // Visual Stacking Effect:
+                // Card 0 (Top): No offset, full opacity
+                // Card 1 (Behind): Down 10px, Right 10px, slightly smaller
+                if(index === 0) {
+                    card.style.transform = 'translate(0, 0) scale(1)';
+                    card.style.opacity = '1';
+                    card.style.pointerEvents = 'auto'; // Clickable
+                } else {
+                    const offset = index * 15;
+                    card.style.transform = `translate(${offset}px, ${offset}px) scale(${1 - index * 0.04})`;
+                    card.style.opacity = index > 2 ? '0' : '1'; // Hide cards deep in stack
+                    card.style.pointerEvents = 'none'; // Not clickable
+                    card.classList.remove('flipped'); // Auto-flip back when moving to stack
+                }
+            });
         }
 
-        function showPrevSlide() {
-            clearTimeout(timeoutId);
-            showSlide(slideIndex - 1);
+        // Initialize on load
+        updateStackVisuals();
+
+        function cycleDeck(direction) {
+            if (cards.length < 2) return;
+
+            if (direction === 1) {
+                // NEXT: Move top card to bottom
+                const topCard = cards[0];
+                // Animation: Slide right and rotate slightly
+                topCard.style.transform = 'translate(120%, 50px) rotate(10deg)';
+                
+                setTimeout(() => {
+                    // Move first card to end of array
+                    cards.push(cards.shift());
+                    updateStackVisuals();
+                }, 300); // Wait 300ms for animation
+            } else {
+                // PREV: Move bottom card to top
+                const bottomCard = cards[cards.length - 1];
+                cards.unshift(cards.pop());
+                
+                // Snap it off-screen first so it can animate IN
+                bottomCard.style.transition = 'none';
+                bottomCard.style.transform = 'translate(120%, 50px)';
+                
+                // Trigger reflow (force browser to update position)
+                void bottomCard.offsetWidth;
+
+                // Re-enable transition and slide in
+                bottomCard.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s';
+                updateStackVisuals();
+            }
         }
 
-        function showSlide(index) {
-            const wrapper = document.getElementById("slideWrapper");
-            const slides = document.getElementsByClassName("slide");
-            slideIndex = index;
+        /* --- FLIP LOGIC --- */
+        function flipCard(card, event) {
+            // IGNORE clicks on buttons, links, or videos
+            if (event.target.closest('a') || 
+                event.target.closest('button') || 
+                event.target.closest('.video-container') ||
+                event.target.closest('.prev') || 
+                event.target.closest('.next')) {
+                return;
+            }
+            card.classList.toggle('flipped');
+        }
 
-            if (slideIndex >= slides.length) {slideIndex = 0}    
-            if (slideIndex < 0) {slideIndex = slides.length - 1}
+        /* --- YOUR SLIDESHOW LOGIC --- */
+        function moveSlides(button, direction) {
+            const container = button.parentElement;
+            const wrapper = container.querySelector('.slides-wrapper');
+            const slides = wrapper.querySelectorAll('.slide');
 
-            const offset = -slideIndex * 100;
-            wrapper.style.transform = `translateX(${offset}%)`;
+            let currentIndex = parseInt(container.getAttribute('data-index')) || 0;
+            currentIndex += direction;
 
-            clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => {
-                showNextSlide();
-            }, 4000);
+            if (currentIndex >= slides.length) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = slides.length - 1;
+
+            wrapper.style.transform = `translateX(${-currentIndex * 100}%)`;
+            container.setAttribute('data-index', currentIndex);
         }
     </script>
 </body>

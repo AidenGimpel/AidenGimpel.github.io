@@ -1,8 +1,12 @@
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    height: 281px;
     overflow: hidden;
+    border: 2px solid cyan;
+    pointer-events: auto;
 }
 .video-container iframe {
     position: absolute;
@@ -11,36 +15,57 @@
 }
 
 body {
-    background-color: #150d00;
+    background-color: #7a4b00;
     color: #e0e0e0;
-    font-family: sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    max-width: 900px;
-    margin: auto;
+    max-width: 100%; 
+    margin: 0;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-.slideshow-container {
-    max-width: 800px;
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.slideshow-container, .slideshow-container-mobile {
+    max-width: 500px;
+    height: auto;
     position: relative;
     margin: auto;
     overflow: hidden;
+    border: 2px solid cyan;
+    pointer-events: auto;
+}
+
+.slideshow-container-mobile {
+    max-width: 70%;
 }
 
 .slides-wrapper {
     display: flex;
     transition: transform 0.6s ease-in-out;
-    width: 100%;
+    max-height: 600px;
 }
 
 .slide {
     min-width: 100%;
-    box-sizing: border-box;
+    height: auto;
+    display: block;
+    justify-content: center;
 }
 
 .slide img {
     width: 100%;
+    height: auto;
     display: block;
+    object-fit: contain;
 }
 
 .prev, .next {
@@ -61,6 +86,104 @@ body {
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
+}
+
+.project-container {
+    background-color: #150d00;
+    padding: 30px;
+    margin-bottom: 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 15px solid cyan;
+}
+
+.deck-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px;
+}
+
+.card-stack {
+    position: relative;
+    width: 600px;
+    height: 900px;
+    perspective: 1500px;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background-color: #150d00;
+    padding: 30px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+    overflow-y: auto;
+}
+
+.flip-hint {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.deck-btn {
+    background: #150d00;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 20px;
+    margin: 0 20px;
+    border-radius: 50%;
+    transition: 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    user-select: none;
+}
+
+.deck-btn:hover {
+    background-color: #2a1a00;
+    color: white;
 }
 
 .fade {

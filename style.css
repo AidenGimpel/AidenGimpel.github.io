@@ -19,12 +19,14 @@ body {
     color: #e0e0e0;
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    max-width: 100%; 
+    max-width: 100%;
     margin: 0;
-    padding: 20px;
+    padding: 40px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -104,6 +106,63 @@ h1, h2, h3 {
     width: 100%;
     max-width: 1200px;
     margin-top: 40px;
+}
+
+.deck-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.sidebar {
+    width: 320px;
+    max-width: 28%;
+    min-width: 240px;
+    background-color: #150d00;
+    color: #e0e0e0;
+    padding: 24px;
+    border-radius: 12px;
+    border: 3px solid cyan;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    box-sizing: border-box;
+    position: fixed;
+    left: 40px;
+    top: 25%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+.sidebar h1 {
+    margin: 0 0 8px 0;
+    font-family: 'Poppins', sans-serif;
+    color: orange;
+}
+.sidebar p, .sidebar a {
+    color: #e0e0e0;
+}
+.sidebar a {
+    color: cyan;
+    text-decoration: none;
+}
+.sidebar a:hover { text-decoration: underline; }
+
+/* Mobile: stack sidebar above content */
+@media (max-width: 900px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    .sidebar {
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 20px;
+        position: static;
+        transform: none;
+    }
+    .deck-wrapper { width: 100%; position: static; transform: none; }
+    .card-stack { width: 90%; height: auto; }
 }
 
 .card-stack {
@@ -211,4 +270,21 @@ h1, h2, h3 {
         transform: scale(1);
         opacity: 1;
     }
+}
+
+/* Specific background for the Chibi Champions card front */
+.card-front.chibi-bg {
+    background-image: url('Images/ChibiChampions_Background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* keep existing overlay color for text readability */
+    background-color: rgba(21,13,0,0.6);
+}
+
+.card-front.chibi-bg h2,
+.card-front.chibi-bg p,
+.card-front.chibi-bg a {
+    color: #f0e9e0; /* slightly brighter for contrast */
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }

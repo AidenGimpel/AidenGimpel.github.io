@@ -11,105 +11,15 @@
 </head>
 
 <body>
-    <!-- <div class="project-container">
-        <h2 style="color: cyan;">Card Scramble: Viola's Diner</h2>
-        <p>
-           Card Scramble: Viola's Diner is a web based cozy card/strategy game reaching thousands of active players. It takes a combination of Scrabble and Poker gameplay, and mixes it with unique diner customization and a refreshing story. The team for this game was a small team consisting of 3 total engineers, 2 designers, and 6 artists. My role as one of the 3 engineers was focused on the cardplay aspect of the gameplay as well as the dialogue system. More details about my specific contributions can be found below.
-        </p>
 
-        <div>
-            <p style="margin-top: 25px;">Take a look at the first 20 mins of gameplay when starting a new account!</p>
-        </div>
+    <aside class="sidebar">
+        <h1>Aiden Gimpel</h1>
+        <p>Game Programmer</p>
+        <p>Email: <a href="mailto:Agimpel@live.com" onclick="event.stopPropagation()">Agimpel@live.com</a></p>
+        <p>Resume: <a href="AidenGimpel_Resume.pdf" target="_blank" onclick="event.stopPropagation()">Download PDF</a></p>
+        <p style="margin-top:12px;">LinkedIn: <a href="https://www.linkedin.com/in/aiden-gimpel-98b443210/" target="_blank" onclick="event.stopPropagation()">My Profile</a></p>
+    </aside>
 
-        <div class="video-container" style="margin-bottom: 5px;">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Cxa6htaki78?si=ZZkZB38D6cHtpsHd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-
-        <div class="slideshow-container">
-            <div class="slides-wrapper">
-                <div class="slide"><img src="Images/CardScramble_1.png"></div>
-                <div class="slide"><img src="Images/CardScramble_2.png"></div>
-                <div class="slide"><img src="Images/CardScramble_3.png"></div>
-                <div class="slide"><img src="Images/CardScramble_4.png"></div>
-                <div class="slide"><img src="Images/CardScramble_5.png"></div>
-            </div>
-
-            <a class="prev" onclick="moveSlides(this, -1)">&#10094;</a>
-            <a class="next" onclick="moveSlides(this, 1)">&#10095;</a>
-        </div>
-
-        <h3 style="color: orange;">Contributions:</h3>
-        <p>Implemented many of the games main gameplay features such as powerups, boosters, board modifiers, card tap/drag controls, and the entire dialogue system, including importing, parsing, and display.
-        </p>
-        <p>Helped ensure proper communication between the client and server to track analytics as well as Daily Puzzle tracking and progression.
-        </p>
-        <p>Implemented most of the UI in the menus and the gameplay HUD.
-        </p>
-        <p>Created UX and game feel features such as the card tilt when it is being dragged and the card draw animation.
-        </p>
-        <p>Contributed to the design of many of the gameplay mechanics to improve the player experience.
-        </p>
-        <p>Constant communication and collaboration with artists and designers to help implement their vision into the game.
-        </p>
-        <h3 style="color: orange;">Play now on <a style="color: orange;" href="https://www.pogo.com/games/card-scramble">Pogo</a> or <a style="color: orange;" href="https://www.crazygames.com/game/card-scramble-viola-s-diner">CrazyGames</a>!</h3>
-    </div> -->
-
-    <!-- <div class="project-container">
-        <h2 style="color: cyan;">Poker Scramble</h2>
-
-        <p>
-           Poker Scramble is a mobile card/strategy game that you can find in early access on the Google Play Store. Complete daily puzzle challenges or wager your chips against other players to win big and unlock exclusive cosmetics.
-        </p>
-
-        <div class="slideshow-container">
-            <div class="slides-wrapper">
-                <div class="slide"><img src="Images/PokerScramble_1.png"></div>
-                <div class="slide"><img src="Images/PokerScramble_2.png"></div>
-                <div class="slide"><img src="Images/PokerScramble_3.png"></div>
-                <div class="slide"><img src="Images/PokerScramble_4.png"></div>
-                <div class="slide"><img src="Images/PokerScramble_5.png"></div>
-            </div>
-
-            <a class="prev" onclick="moveSlides(this, -1)">&#10094;</a>
-            <a class="next" onclick="moveSlides(this, 1)">&#10095;</a>
-        </div>
-
-        <h3 style="color: orange;">Contributions:</h3>
-        <p>Implemented gameplay systems such as level progression and the different game modes that are present in the game (Daily Puzzle, PVP, Story).
-        </p>
-        <p>Implemented core UI systems and UX improvements such as the animated in game menus and the HUD.
-        </p>
-        <p>Constant communication and collaboration with artists and designers to help implement their vision into the game.
-        </p>
-        <p>Active teamwork with other engineers to minimize tech debt and improve work efficiency.
-        </p>
-        <h3 style="color: orange;">Download and play now on the <a style="color: orange;" href="https://play.google.com/store/apps/details?id=com.ironfoxgames.scramble">Google Play Store</a>!</h3>
-    </div> -->
-
-    <!-- <script>
-
-        function moveSlides(button, direction) {
-            const container = button.parentElement;
-            const wrapper = container.querySelector('.slides-wrapper');
-            const slides = wrapper.querySelectorAll('.slide');
-
-            let currentIndex = parseInt(container.getAttribute('data-index')) || 0;
-
-            currentIndex += direction;
-
-            if (currentIndex >= slides.length)
-            {
-                currentIndex = 0;
-            }
-            if (currentIndex < 0)
-            {
-                currentIndex = slides.length - 1;
-            }
-
-            wrapper.style.transform = `translateX(${-currentIndex * 100}%)`;
-            container.setAttribute('data-index', currentIndex);
-        }
-    </script> -->
     <div class="deck-wrapper">
         
         <button class="deck-btn" onclick="cycleDeck(-1)">&#10094;</button>
@@ -176,15 +86,16 @@
 
             <div class="card" onclick="flipCard(this, event)">
                 <div class="card-inner">
-                    <div class="card-front">
+                    <div class="card-front chibi-bg">
                         <h2 style="color: orange; margin-top: 0;">Chibi Champions</h2>
                         <p>
                             Chibi Champions is a chaotic third person tower-defense/brawler game, which allows you to play as three adorable mutated animals against an onslaught of enemies. Fight to defend the cure for your mutation alongside your newfound friends. Build powerful towers and gather coins to unlock their true potential.
                         </p>
 
-                        <p>
-                            This game won my team and I the Game of the Year award at Ontario Tech University's Games Con in April 2022.
-                        </p>
+                        <div class="video-container" style="margin-bottom: 10px;">
+                            <iframe src="https://www.youtube.com/embed/UyYXLzDCmk8?si=K4Pjo569NFV9-IAa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+
                         <div class="slideshow-container" data-index="0" style="background: #221500;">
                              <div class="slides-wrapper">
                                 <div class="slide"><img src="Images/ChibiChampions_5.png"></div>
@@ -207,6 +118,10 @@
                         <h2 style="color: orange; border-bottom: 1px solid #333; padding-bottom: 15px;">My Contributions</h2>
                         <p>
                             I was the sole engineer on this project and I implemented and designed all aspects of gameplay. This includes every gameplay mechanic for characters, enemies, towers, AI, and the core gameplay loop and meta loop. There were 4 other members on my team for this project. 2 Artists, 1 sound engineer, and one project manager/UI designer.
+                        </p>
+
+                         <p>
+                            This game won my team and I the Game of the Year award at Ontario Tech University's Games Con in April 2022.
                         </p>
 
                         <div style="margin-top: 30px; text-align: center;">
